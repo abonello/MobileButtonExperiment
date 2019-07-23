@@ -54,15 +54,16 @@
 
         .nav {
             transition: all 0.6s ease-in;
-            transform-origin: top left;
+            /* Style 1 */
+            /* transform-origin: top left; */
+            /* Style 2 */
+            transform-origin: bottom left;
         }
 
         .nav ul {
             list-style: none;
-            /* height: auto; */
         }
         .nav li {
-            /* width: 80px; */
             display: inline-block;
             background-color: black;
             margin: 0 5px;
@@ -75,10 +76,11 @@
             color: white;
         }
         .navDisplay {
-            /* height: 0; */
+            /* Style1 */
             /* transform: scaleX(0); */
-            transform: scaleY(0);
-            /* visibility: hidden; */
+            /* Style 2 */
+            transform: scaleY(0) translateY(-100px);
+            visibility: hidden;
         }
     </style>
 </head>
