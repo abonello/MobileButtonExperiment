@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .top {
+            height: 150px;
+            background-color: black;
+            position: relative;
+        }
+        #mobileLink {
+            position:absolute;
+            top: 50px;
+            right: 100px;
+            height: 35px;
+            width: 80px;
+            z-index: 1;
+        }
+        #mobileLink:hover {
+            cursor: pointer;
+        }
+        .mobile {
+            z-index: 0;
+            position: absolute;
+            /* top: 50px; */
+            top: 15px;
+            /* right: 100px; */
+            right: 0px;
+            height: 5px;
+            /* height: 100%; */
+            /* width: 80px; */
+            width: 100%;
+            background-color: white;
+        }
+        .mobile::before,
+        .mobile::after {
+            content: '';
+            position: absolute;
+            /* top: 0px; */
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: white;
+        }
+        .mobile::before {
+            top: -15px;
+        }
+        .mobile::after {
+            top: 15px;
+        }
+
+        .nav {
+            transition: all 0.6s ease-in;
+            transform-origin: top left;
+        }
+
+        .nav ul {
+            list-style: none;
+            /* height: auto; */
+        }
+        .nav li {
+            /* width: 80px; */
+            display: inline-block;
+            background-color: black;
+            margin: 0 5px;
+            text-align: center;
+            padding: 5px 15px;
+            font-size: 2rem;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+        }
+        .navDisplay {
+            /* height: 0; */
+            /* transform: scaleX(0); */
+            transform: scaleY(0);
+            /* visibility: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <a id="mobileLink" onclick="toggleNav()">
+                <span class="mobile"></span>
+            </a>
+        </div>
+        <div id="nav" class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        function toggleNav() {
+            document.getElementById("nav").classList.toggle("navDisplay");
+        }
+    </script>
+</body>
+</html>
