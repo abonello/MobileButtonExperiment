@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
+      header {
+        height: auto;
+        transform-origin: top left;
+        transition: all 1s ease-out;
+        height: 220px;
+      }
+      #topHeader.headerResize {
+          height: 170px;
+      }
       .top {
         height: 150px;
         background-color: black;
@@ -34,6 +43,7 @@
         /* width: 80px; */
         width: 100%;
         background-color: white;
+
       }
       .mobile::before,
       .mobile::after {
@@ -92,7 +102,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <header id="topHeader">
       <div class="top">
         <a id="mobileLink" onclick="toggleNav()">
           <span class="mobile"></span>
@@ -120,8 +130,24 @@
       </p>
     </div>
     <script>
+      //   function toggleNav() {
+      //     document.getElementById("nav").classList.toggle("navDisplay");
+      //   }
+
       function toggleNav() {
-        document.getElementById("nav").classList.toggle("navDisplay");
+          console.log(document.getElementById("nav").classList.item(1));
+          if (document.getElementById("nav").classList.item(1) === "navDisplay") {
+            setTimeout(function() {
+                document.getElementById("nav").classList.toggle("navDisplay");
+                }, 1000);
+                document.getElementById("topHeader").classList.toggle("headerResize");
+            } else {
+            setTimeout(function() {
+                //   document.getElementById("topHeader").style.height = "150px";
+                document.getElementById("topHeader").classList.toggle("headerResize");
+                }, 1000);
+                document.getElementById("nav").classList.toggle("navDisplay");
+            }
       }
     </script>
   </body>
