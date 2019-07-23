@@ -1,109 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-        .top {
-            height: 150px;
-            background-color: black;
-            position: relative;
-        }
-        #mobileLink {
-            position:absolute;
-            top: 50px;
-            right: 100px;
-            height: 35px;
-            width: 80px;
-            z-index: 1;
-        }
-        #mobileLink:hover {
-            cursor: pointer;
-        }
-        .mobile {
-            z-index: 0;
-            position: absolute;
-            /* top: 50px; */
-            top: 15px;
-            /* right: 100px; */
-            right: 0px;
-            height: 5px;
-            /* height: 100%; */
-            /* width: 80px; */
-            width: 100%;
-            background-color: white;
-        }
-        .mobile::before,
-        .mobile::after {
-            content: '';
-            position: absolute;
-            /* top: 0px; */
-            left: 0px;
-            height: 100%;
-            width: 100%;
-            background-color: white;
-        }
-        .mobile::before {
-            top: -15px;
-        }
-        .mobile::after {
-            top: 15px;
-        }
+      .top {
+        height: 150px;
+        background-color: black;
+        position: relative;
+      }
+      #mobileLink {
+        position: absolute;
+        top: 50px;
+        right: 100px;
+        height: 35px;
+        width: 80px;
+        z-index: 1;
+      }
+      #mobileLink:hover {
+        cursor: pointer;
+      }
+      .mobile {
+        z-index: 0;
+        position: absolute;
+        /* top: 50px; */
+        top: 15px;
+        /* right: 100px; */
+        right: 0px;
+        height: 5px;
+        /* height: 100%; */
+        /* width: 80px; */
+        width: 100%;
+        background-color: white;
+      }
+      .mobile::before,
+      .mobile::after {
+        content: "";
+        position: absolute;
+        /* top: 0px; */
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+      }
+      .mobile::before {
+        top: -15px;
+      }
+      .mobile::after {
+        top: 15px;
+      }
 
-        .nav {
-            transition: all 0.6s ease-in;
-            /* Style 1 */
-            /* transform-origin: top left; */
-            /* Style 2 */
-            transform-origin: bottom left;
-        }
+      .nav {
+        transition: all 0.6s ease-in;
+        /* Style 1 */
+        /* transform-origin: top left; */
+        /* Style 2 */
+        transform-origin: bottom left;
+      }
 
-        .nav ul {
-            list-style: none;
-        }
-        .nav li {
-            display: inline-block;
-            background-color: black;
-            margin: 0 5px;
-            text-align: center;
-            padding: 5px 15px;
-            font-size: 2rem;
-        }
-        .nav a {
-            text-decoration: none;
-            color: white;
-        }
-        .navDisplay {
-            /* Style1 */
-            /* transform: scaleX(0); */
-            /* Style 2 */
-            transform: scaleY(0) translateY(-100px);
-            visibility: hidden;
-        }
+      .nav ul {
+        list-style: none;
+      }
+      .nav li {
+        display: inline-block;
+        background-color: black;
+        margin: 0 5px;
+        text-align: center;
+        padding: 5px 15px;
+        font-size: 2rem;
+      }
+      .nav a {
+        text-decoration: none;
+        color: white;
+      }
+      .navDisplay {
+        /* Style1 */
+        /* transform: scaleX(0); */
+
+        /* Style 2 */
+        transform: scaleY(0) translateY(-100px);
+
+        /* visibility: hidden; */ /*Not really needed */
+
+        /* Will be sudden - no animation */
+        /* the advantage of display none is that it takes away the 
+            space of the nav when it is not showing */
+        /* display: none; */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="top">
-            <a id="mobileLink" onclick="toggleNav()">
-                <span class="mobile"></span>
-            </a>
-        </div>
-        <div id="nav" class="nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
+      <div class="top">
+        <a id="mobileLink" onclick="toggleNav()">
+          <span class="mobile"></span>
+        </a>
+      </div>
+      <div id="nav" class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
     </header>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
+        quisquam quidem, dolorem est accusamus maxime velit architecto itaque id
+        tempore veniam porro commodi, impedit laudantium. Distinctio atque vitae
+        autem laborum. Quibusdam dicta, pariatur illum officiis assumenda
+        aspernatur itaque dolorem distinctio magni eaque non, consequuntur vel
+        commodi libero? Explicabo, non dolor maiores delectus, facere nulla
+        corporis, nisi aliquam aut eligendi vero. Voluptas, atque, eaque vero
+        doloremque deleniti necessitatibus
+      </p>
+    </div>
     <script>
-        function toggleNav() {
-            document.getElementById("nav").classList.toggle("navDisplay");
-        }
+      function toggleNav() {
+        document.getElementById("nav").classList.toggle("navDisplay");
+      }
     </script>
-</body>
+  </body>
 </html>
